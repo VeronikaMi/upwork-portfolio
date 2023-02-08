@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #251d20;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 25px;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: #251d20;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+main {
+  // padding: 20px;
+  background-color: #f4f4f4;
+  transition: background-color 0.8s ease;
+  .logo {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+
+  #issues {
+    height: 100vh;
+    overflow-y: scroll; //important
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+    .issue {
+      height: 100vh;
+      scroll-snap-align: start;
+      // vertical-align: middle;
+      padding-top: 80px;
+      p,
+      #buy {
+        display: block;
+        margin-bottom: 16px;
+      }
+      text-align: center;
+
+      img {
+        width: 420px;
+      }
+
+      .stores {
+        font-size: 15px;
+      }
+      .link {
+        color: #e568ac;
+      }
+    }
+  }
+
+  .about {
+    width: 320px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    .copyright,
+    .copyright a {
+      font-size: 12px;
+      font-weight: 100;
+      color: #251d20;
+    }
+
+    .copyright a {
+      text-decoration: underline;
+    }
+  }
+
+  #issues-links {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    a {
+      display: block;
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 100;
+    }
+
+    .active {
+      font-weight: bold;
+    }
+  }
+
+  .mail {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    a {
+      font-size: 18px;
+    }
+  }
+}
+
+.color-6 {
+  background-color: #fff;
+}
+.color-5 {
+  background-color: #00c1b5;
+}
+.color-4 {
+  background-color: #ff651a;
+}
+.color-3 {
+  background-color: #ffbe00;
+}
+.color-2 {
+  background-color: #1d3fbb;
+}
+.color-1 {
+  background-color: #e30512;
+}
+
+main[class^="color-"] {
+  #issues {
+    .issue {
+      .link {
+        color: #f4f4f4;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 994px) {
+  main {
+    .logo{
+      position: static;
+      padding: 20px;
+    }
+    #issues{
+      // position: relative;
+      .about {
+        // scroll-margin-bottom: 20px;
+        position: static;
+        margin-left: 20px;
+      }
+  
+      #issues-links {
+        display: none;
+      }
+  
+      .mail {
+        position: static;
+        float: right;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  main{
+    .logo{
+      font-size: 22px;
+    }
+    #issues{
+      .issue{
+        img{
+          width: 80%;
+          max-width: 420px;
+        }
+      }
+
+      .about, .mail{
+        width: 90%;
+        // margin-right: 0;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .mail{
+        float: none;
+        margin: 20px auto;
+      }
+    }
+  }
+}
